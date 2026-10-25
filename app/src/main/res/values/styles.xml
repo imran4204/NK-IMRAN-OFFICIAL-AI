@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.NKImranAI" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">#090b10</item>
+        <item name="android:statusBarColor">#090b10</item>
+        <item name="android:navigationBarColor">#090b10</item>
+    </style>
+</resources>
