@@ -1,0 +1,6 @@
+{
+  "name": "NK IMRAN OFFICIAL AI",
+  "description": "An advanced, dark modern AI workstation with Bengali language support, AI Chat, Make Anything code & project generator, Code Checker, Bangla Text-to-Speech, and AI Video Maker.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

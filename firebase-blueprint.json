@@ -1,0 +1,47 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile information, preferences, consent, and automatic memory status",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 256 },
+        "displayName": { "type": "string", "maxLength": 128 },
+        "preferredName": { "type": "string", "maxLength": 128 },
+        "preferredLanguage": { "type": "string", "maxLength": 10 },
+        "interests": { "type": "string", "maxLength": 500 },
+        "consentGiven": { "type": "boolean" },
+        "autoMemoryEnabled": { "type": "boolean" },
+        "createdAt": { "type": "string", "maxLength": 64 },
+        "updatedAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["uid", "email"]
+    },
+    "UserChatSession": {
+      "title": "UserChatSession",
+      "description": "Persistently saved user conversation and automatic memory context",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 200 },
+        "tone": { "type": "string", "maxLength": 50 },
+        "summary": { "type": "string", "maxLength": 1000 },
+        "createdAt": { "type": "string", "maxLength": 64 },
+        "updatedAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "userId", "title"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Private user account profile, consent, and automatic memory preferences"
+    },
+    "/users/{userId}/chats/{chatId}": {
+      "schema": "UserChatSession",
+      "description": "User chat sessions and automatic context strictly isolated per authenticated user"
+    }
+  }
+}
